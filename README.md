@@ -44,3 +44,6 @@ erDiagram
 - Planned simple entity relationship diagram
 - Start project named `sportsleague`
 - Start app named `rankings`
+- Created basic model based on erd
+- Define simple testcases
+- Modified model accordingly

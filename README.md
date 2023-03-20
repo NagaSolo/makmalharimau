@@ -20,7 +20,7 @@
 
 ##### Considerations
 - As the DB is not specified, I'll be using the default SQLite database for POC
-- It'd be better to make use of docker actually to eliminate "it's running on my computer issues"
+- It'd be better to make use of docker actually to eliminate "it's running on my computer issues", however doing it traditionally for now.
 
 
 ##### Setup
@@ -28,3 +28,14 @@
 - Create python3.9 virtualenv with `python3.9 -m venv venv`
 - Verify virtual environment are using python 3.9 `python --version`
 - Create `requirements.txt` and include `Django==3.2.18`
+
+
+##### ERD
+- Based on questions and requirements, following entities will be included:
+```mermaid
+erDiagram
+    USER ||..|{ FILE : uploads
+    USER ||..|{ GAME : CRUD
+    FILE ||..|{ GAME : contains
+    GAME ||..|{ TEAM : between
+```

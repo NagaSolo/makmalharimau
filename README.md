@@ -17,3 +17,14 @@
 - Use the following minimum versions:
     - Python: 3.9
     - Django: 3.2
+
+##### Considerations
+- As the DB is not specified, I'll be using the default SQLite database for POC
+- It'd be better to make use of docker actually to eliminate "it's running on my computer issues"
+
+
+##### Setup
+- Configure wsl by installing python3.9, python3.9-dev, python3.9-venv
+- Create python3.9 virtualenv with `python3.9 -m venv venv`
+- Verify virtual environment are using python 3.9 `python --version`
+- Create `requirements.txt` and include `Django==3.2.18`

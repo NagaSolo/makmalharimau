@@ -8,6 +8,7 @@
 - Install all the dependencies specified at the requirements: `pip install -r requirements.txt`
 - Run `python manage.py makemigrations` to create migration files and initialize sqlite db
 - Run `python manage.py migrate` to migrate migrations files
+- Run `python manage.py test` to test
 - Run `python manage.py runserver` to start development server
 
 

@@ -1,0 +1,15 @@
+<h1>Ranking based on uploaded and edited CSV</h1>
+<table>
+    <tr>
+      <th>Ranking</th>
+      <th>Team</th>
+      <th>Points</th>
+    </tr>
+    {% for team, point in ranks.items %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ team }}</td>
+      <td>{{ point }}</td>
+    </tr>
+    {% endfor %}
+</table>

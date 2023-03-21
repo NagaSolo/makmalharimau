@@ -51,3 +51,4 @@ erDiagram
 - Testing homepage view and template
 - Testing csv upload view and template
 - Testing csv update view and template
+- Testing temporary rankings view and template

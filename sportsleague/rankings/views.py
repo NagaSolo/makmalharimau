@@ -25,8 +25,8 @@ def upload(request):
 
         file_data = uploaded_file.read().decode("utf-8")
         lines = file_data.split("\n")
-        print(file_data)
-        teams = {'test':'test1'}
+        # print(file_data)
+        # teams = {'test':'test1'}
         #loop over the lines and save them in db. If error , store as string and then display
         for row in lines:
         # for row in csv.reader(uploaded_file):
@@ -46,21 +46,29 @@ def upload(request):
             except ValueError:
                 messages.error(request, 'Scores must be integers.')
                 return HttpResponseRedirect(reverse('upload'))
-            
-            # team1 = Team.objects.get_or_create(name=team1_name)
-            # team2 = Team.objects.get_or_create(name=team2_name)
-            
-            # game = Game(team_1=team1, team_2=team2)
-            # game.save()
 
             
-        messages.success(request, 'Games uploaded successfully.')
-        initial = {'body': file_data}
-        form = CSVForm(request.POST or None, initial=initial)
-        # return HttpResponseRedirect(reverse('update'), {"form": form})
-        return render(request, 'rankings/list_update.html', context={"form":form})
+        messages.success(request, 'CSV uploaded successfully.')
+
+        # pass string to be edited
+        return HttpResponseRedirect(reverse('update', kwargs={'data': file_data}))
+        # return render(request, 'rankings/list_update.html', context=context)
     return render(request, 'rankings/form_upload.html')
     
 
-def update(request):
-    return render(request, 'rankings/list_update.html')
+def update(request, data):        
+    context = {}
+    initial_dict = {"content": data}
+    form = CSVForm(request.POST or None, initial=initial_dict)
+    context['form'] = form
+    return render(request, 'rankings/list_update.html', context)
+
+
+def ranking(request, data):
+    
+    # team1 = Team.objects.get_or_create(name=team1_name)
+    # team2 = Team.objects.get_or_create(name=team2_name)
+            
+    # game = Game(team_1=team1, team_2=team2)
+    # game.save()
+    pass

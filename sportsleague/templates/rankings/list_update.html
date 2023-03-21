@@ -1,9 +1,9 @@
 <h1>Modify before saving</h1>
 
-<form method="POST" action='{% url "update" %}'>
+<form method="POST">
     {% csrf_token %}
     {{ form }}
-    <input type="submit" />
+    <input type="submit" value="Generate Ranking">
 </form>
 
 {% if messages %}

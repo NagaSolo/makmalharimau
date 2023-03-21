@@ -11,6 +11,9 @@
 - Run `python manage.py runserver` to start development server
 
 
+#### WIKI
+- Snapshot of pages here: https://github.com/NagaSolo/makmalharimau/wiki
+
 #### Documentation 
 
 ##### Stories

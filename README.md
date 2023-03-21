@@ -47,3 +47,7 @@ erDiagram
 - Created basic model based on erd
 - Define simple testcases
 - Modified model accordingly
+- Configure settings to include app urls
+- Testing homepage view and template
+- Testing csv upload view and template
+- Testing csv update view and template
